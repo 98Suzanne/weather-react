@@ -1,0 +1,116 @@
+h1 {
+  font-weight: bold;
+}
+h1,
+h2 {
+  font-size: 50px;
+}
+h3,
+h4 {
+  font-size: 35px;
+}
+.container {
+  font-family: "Roboto Serif", sans-serif;
+  font-weight: 600;
+  width: 35%;
+  margin: 50px auto 10px auto;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 35px 40px;
+  box-shadow: 5px 5px 5px grey;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-size: 110%;
+}
+.rightcol1,
+.rightcol2,
+.measure {
+  text-align: right;
+}
+.rightcol2 {
+  margin-top: 15%;
+}
+#icon {
+  width: 45%;
+  padding: 15px 0px;
+}
+#current-date,
+#weather,
+.measure,
+.week-temp {
+  font-size: 20px;
+}
+.card {
+  background-color: rgba(245, 245, 245, 0);
+  border: 0;
+  align-items: center;
+}
+.card-body {
+  font-size: 25px;
+  border: 0;
+  padding: 8px 5px;
+}
+.week-weather {
+  padding: 0%;
+}
+.week-img {
+  width: 70%;
+  padding: 12px 0px;
+}
+h1 {
+  font-weight: bold;
+}
+h1,
+h2 {
+  font-size: 50px;
+}
+h3,
+h4 {
+  font-size: 35px;
+}
+.container {
+  font-family: "Roboto Serif", sans-serif;
+  font-weight: 600;
+  width: 35%;
+  margin: 50px auto 10px auto;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 35px 40px;
+  box-shadow: 5px 5px 5px grey;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-size: 110%;
+}
+.rightcol1,
+.rightcol2,
+.measure {
+  text-align: right;
+}
+.rightcol2 {
+  margin-top: 15%;
+}
+#icon {
+  width: 45%;
+  padding: 15px 0px;
+}
+#current-date,
+#weather,
+.measure,
+.week-temp {
+  font-size: 20px;
+}
+.card {
+  background-color: rgba(245, 245, 245, 0);
+  border: 0;
+  align-items: center;
+}
+.card-body {
+  font-size: 25px;
+  border: 0;
+  padding: 8px 5px;
+}
+.week-weather {
+  padding: 0%;
+}
+.week-img {
+  width: 70%;
+  padding: 12px 0px;
+}
