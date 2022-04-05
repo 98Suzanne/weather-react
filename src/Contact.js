@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <div>
       <a
-        href="https://github.com/98Suzanne/Weather-app"
+        href="https://github.com/98Suzanne/weather-react"
         className="github"
         target="blank"
       >
