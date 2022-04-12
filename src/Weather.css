@@ -56,61 +56,33 @@ h4 {
   width: 70%;
   padding: 12px 0px;
 }
-h1 {
-  font-weight: bold;
+#city-input {
+  border-color: #ffffff;
 }
-h1,
-h2 {
-  font-size: 50px;
+.degree-type,
+.btn-primary,
+#location-button {
+  background-color: #6acbf8;
+  border-color: #6acbf8;
 }
-h3,
-h4 {
-  font-size: 35px;
+#city-input {
+  line-height: 30px;
 }
-.container {
-  font-family: "Roboto Serif", sans-serif;
-  font-weight: 600;
-  width: 35%;
-  margin: 50px auto 10px auto;
-  border: 1px solid grey;
-  border-radius: 10px;
-  padding: 35px 40px;
-  box-shadow: 5px 5px 5px grey;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  background-size: 110%;
+.location {
+  color: white;
 }
-.rightcol1,
-.rightcol2,
-.measure {
-  text-align: right;
-}
-.rightcol2 {
-  margin-top: 15%;
-}
-#icon {
-  width: 45%;
-  padding: 15px 0px;
-}
-#current-date,
-#weather,
-.measure,
-.week-temp {
-  font-size: 20px;
-}
-.card {
-  background-color: rgba(245, 245, 245, 0);
-  border: 0;
-  align-items: center;
-}
-.card-body {
+#temperature-type {
   font-size: 25px;
-  border: 0;
-  padding: 8px 5px;
+  text-align: right;
+  padding-bottom: 10px;
 }
-.week-weather {
-  padding: 0%;
-}
-.week-img {
-  width: 70%;
-  padding: 12px 0px;
+.degree-type {
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 6px 6px 6px 6px;
+  border-radius: 3px;
+  display: inline-flex;
+  cursor: default;
 }

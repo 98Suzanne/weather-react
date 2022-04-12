@@ -1,15 +1,13 @@
 import React from "react";
+import Weather from "./Weather";
 import Contact from "./Contact";
-import Search from "./Search";
-import Forecast from "./Forecast";
 
 export default function App() {
   return (
     <div className="App">
       <body>
         <div className="container">
-          <Search />
-          <Forecast />
+          <Weather />
           <hr />
           <div className="weather-forecast" id="forecast"></div>
         </div>
