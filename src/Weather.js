@@ -13,10 +13,13 @@ export default function Weather(props) {
       ready: true,
       coordinates: response.data.coord,
       temperature: response.data.main.temp,
+      min: response.data.main.temp_min,
+      max: response.data.main.temp_max,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
+      clouds: response.data.clouds.all,
       wind: response.data.wind.speed,
       city: response.data.name,
     });
@@ -32,7 +35,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "1abad5c198be1cab987a15b09610f472";
+    const apiKey = "31a995c70fb45a5759befe8272154a19";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -69,35 +72,35 @@ export default function Weather(props) {
         <hr />
         <div className="row">
           <div className="col leftcol1" id="city-name">
-            <h1>Amsterdam</h1>
-            <div id="current-date">Monday, January 10 2022</div>
+            <h1>{weatherData.city}</h1>
+            <div id="current-date">{weatherData.date}</div>
           </div>
           <div className="col rightcol1">
             <h2>
-              <span id="temp-display">9</span>
+              <span id="temp-display">{weatherData.temperature}</span>
               <span id="temp-unit">°C</span>
             </h2>
             <h3>
-              <span id="max">11</span>
-              <span>°</span> /<span id="min">4</span>
+              <span id="max">{weatherData.max}</span>
+              <span>°</span> /<span id="min">{weatherData.min}</span>
               <span>°</span>
             </h3>
           </div>
         </div>
         <div className="row">
           <div className="col leftcol2">
-            <div id="weather">Partly cloudy</div>
+            <div id="weather">{weatherData.description}</div>
             <img src="img/01d.png" id="icon" />
           </div>
           <div className="col rightcol2">
             <div className="measure" id="clouds">
-              Cloudiness: 37%
+              Cloudiness: {weatherData.clouds}%
             </div>
             <div className="measure" id="humidity">
-              Humidity: 90%
+              "Humidity: {weatherData.humidity}%"
             </div>
             <div className="measure" id="wind">
-              Wind: 16 km/h
+              Wind: {weatherData.wind} km/h
             </div>
           </div>
         </div>
