@@ -3,6 +3,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import ConversionButton from "./ConversionButton";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -61,13 +62,8 @@ export default function Weather(props) {
               </button>
             </form>
           </div>
-          <div className="col-4" id="temperature-type">
-            <a href="#" className="degree-type" id="celsius-link">
-              °C{" "}
-            </a>
-            <a href="#" className="degree-type" id="fahrenheit-link">
-              °F{" "}
-            </a>
+          <div className="col-4">
+            <ConversionButton />
           </div>
         </div>
         <hr />
