@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -71,45 +71,7 @@ export default function Weather(props) {
           </div>
         </div>
         <hr />
-        <div className="row">
-          <div className="col leftcol1" id="city-name">
-            <h1>{weatherData.city}</h1>
-            <div id="current-date">
-              <FormattedDate date={weatherData.date} />
-            </div>
-          </div>
-          <div className="col rightcol1">
-            <h2>
-              <span id="temp-display">
-                {Math.round(weatherData.temperature)}
-              </span>
-              <span id="temp-unit">°C</span>
-            </h2>
-            <h3>
-              <span id="max">{Math.round(weatherData.max)}</span>
-              <span>°</span> /
-              <span id="min">{Math.round(weatherData.min)}</span>
-              <span>°</span>
-            </h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col leftcol2">
-            <div id="weather">{weatherData.description}</div>
-            <img src="img/01d.png" id="icon" />
-          </div>
-          <div className="col rightcol2">
-            <div className="measure" id="clouds">
-              Cloudiness: {weatherData.clouds}%
-            </div>
-            <div className="measure" id="humidity">
-              Humidity: {weatherData.humidity}%
-            </div>
-            <div className="measure" id="wind">
-              Wind: {weatherData.wind} km/h
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
