@@ -3,6 +3,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -12,12 +13,12 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       min: response.data.main.temp_min,
       max: response.data.main.temp_max,
       humidity: response.data.main.humidity,
-      date: new Date(response.data.dt * 1000),
-      description: response.data.weather[0].description,
+      description: response.data.weather[0].main,
       icon: response.data.weather[0].icon,
       clouds: response.data.clouds.all,
       wind: response.data.wind.speed,
@@ -27,7 +28,7 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    search(city);
   }
 
   function handleCityChange(event) {
@@ -48,7 +49,7 @@ export default function Weather(props) {
               <input
                 type="text"
                 placeholder="Enter a city"
-                autocomplete="off"
+                autoComplete="off"
                 id="city-input"
                 onChange={handleCityChange}
               />
@@ -73,16 +74,21 @@ export default function Weather(props) {
         <div className="row">
           <div className="col leftcol1" id="city-name">
             <h1>{weatherData.city}</h1>
-            <div id="current-date">{weatherData.date}</div>
+            <div id="current-date">
+              <FormattedDate date={weatherData.date} />
+            </div>
           </div>
           <div className="col rightcol1">
             <h2>
-              <span id="temp-display">{weatherData.temperature}</span>
+              <span id="temp-display">
+                {Math.round(weatherData.temperature)}
+              </span>
               <span id="temp-unit">°C</span>
             </h2>
             <h3>
-              <span id="max">{weatherData.max}</span>
-              <span>°</span> /<span id="min">{weatherData.min}</span>
+              <span id="max">{Math.round(weatherData.max)}</span>
+              <span>°</span> /
+              <span id="min">{Math.round(weatherData.min)}</span>
               <span>°</span>
             </h3>
           </div>
@@ -97,7 +103,7 @@ export default function Weather(props) {
               Cloudiness: {weatherData.clouds}%
             </div>
             <div className="measure" id="humidity">
-              "Humidity: {weatherData.humidity}%"
+              Humidity: {weatherData.humidity}%
             </div>
             <div className="measure" id="wind">
               Wind: {weatherData.wind} km/h
