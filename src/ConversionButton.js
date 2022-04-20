@@ -1,20 +1,17 @@
-import React, { useState } from "react";
-import WeatherTemperature from "./WeatherTemperature";
+import React from "react";
 
-export default function ConversionButton() {
-  const [unit, setUnit] = useState("celsius");
-
+export default function ConversionButton(props) {
   function showFahrenheit(event) {
     event.preventDefault();
-    setUnit("fahrenheit");
+    props.setUnit("fahrenheit");
   }
 
   function showCelsius(event) {
     event.preventDefault();
-    setUnit("celsius");
+    props.setUnit("celsius");
   }
 
-  if (unit === "celsius") {
+  if (props.unit === "celsius") {
     return (
       <div>
         <div id="temperature-type">

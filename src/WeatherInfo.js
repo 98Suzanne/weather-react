@@ -16,6 +16,7 @@ export default function WeatherInfo(props) {
         <div className="col rightcol1">
           <h2>
             <WeatherTemperature
+              unit={props.unit}
               celsius={props.data.temperature}
               max={props.data.max}
               min={props.data.min}
