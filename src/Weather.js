@@ -9,6 +9,7 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("celsius");
 
   function handleResponse(response) {
     setWeatherData({
@@ -63,11 +64,11 @@ export default function Weather(props) {
             </form>
           </div>
           <div className="col-4">
-            <ConversionButton />
+            <ConversionButton setUnit={setUnit} unit={unit} />
           </div>
         </div>
         <hr />
-        <WeatherInfo data={weatherData} />
+        <WeatherInfo data={weatherData} setUnit={setUnit} unit={unit} />
       </div>
     );
   } else {
