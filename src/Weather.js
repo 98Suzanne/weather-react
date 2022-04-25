@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import ConversionButton from "./ConversionButton";
+import Forecast from "./Forecast";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -14,7 +15,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      coordinates: response.data.coord,
+      coord: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       min: response.data.main.temp_min,
@@ -69,6 +70,7 @@ export default function Weather(props) {
         </div>
         <hr />
         <WeatherInfo data={weatherData} setUnit={setUnit} unit={unit} />
+        <Forecast coords={weatherData.coord} />
       </div>
     );
   } else {
