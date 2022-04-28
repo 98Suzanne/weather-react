@@ -29,9 +29,7 @@ h4 {
 .rightcol2 {
   margin-top: 15%;
 }
-.icon {
-  padding: 15px 0px;
-}
+
 #current-date,
 #weather,
 .measure {
@@ -40,9 +38,13 @@ h4 {
 .city-input {
   border-color: #ffffff;
 }
+.btn-primary,
+.location-button {
+  margin-left: 5px;
+}
 .degree-type,
 .btn-primary,
-#location-button {
+.location-button {
   background-color: #6acbf8;
   border-color: #6acbf8;
 }
@@ -60,8 +62,9 @@ h4 {
 .degree-type {
   color: #eeeeee;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: bold;
+  margin-left: 5px;
   padding: 6px 6px 6px 6px;
   border-radius: 3px;
   display: inline-flex;

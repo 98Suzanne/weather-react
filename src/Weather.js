@@ -31,18 +31,24 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search(city);
+    searchLocation(city);
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
   }
 
-  function search() {
+  function searchLocation() {
     const apiKey = "31a995c70fb45a5759befe8272154a19";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
+
+  function getCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
+  }
+
   if (weatherData.ready) {
     return (
       <div>
@@ -59,8 +65,12 @@ export default function Weather(props) {
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>
-              <button id="location-button">
-                <FontAwesomeIcon icon={faLocationDot} className="location" />
+              <button className="location-button">
+                <FontAwesomeIcon
+                  icon={faLocationDot}
+                  className="location"
+                  onClick={getCurrentLocation}
+                />
               </button>
             </form>
           </div>
@@ -74,7 +84,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    search();
+    searchLocation();
     return "Loading...";
   }
 }

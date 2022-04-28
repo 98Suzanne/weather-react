@@ -1,11 +1,14 @@
 .ForecastWeather {
   padding: 0%;
+  text-align: center;
 }
 .ForecastDay {
   font-weight: 700;
 }
-.ForecastTemp {
-  font-size: 20px;
+.ForecastWeather,
+.ForecastMax,
+.ForecastMin {
+  font-size: 24px;
 }
 .card {
   background-color: rgba(245, 245, 245, 0);
