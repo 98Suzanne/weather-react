@@ -23,9 +23,9 @@ export default function Forecast(props) {
           <div className="card-body">
             <div className="row">
               {forecast.map(function(dailyForecast, index) {
-                if (index < 4) {
+                if (index < 5) {
                   return (
-                    <div className="col-3" key={index}>
+                    <div className="col" key={index}>
                       <ForecastDay data={dailyForecast} />
                     </div>
                   );

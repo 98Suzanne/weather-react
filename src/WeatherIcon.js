@@ -5,7 +5,7 @@ export default function WeatherIcon(props) {
     <img
       src={`/img/${props.code}.png`}
       alt={props.alt}
-      height="150"
+      height={props.height}
       className="icon"
     />
   );
