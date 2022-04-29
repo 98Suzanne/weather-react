@@ -19,13 +19,13 @@ export default function Forecast(props) {
   if (loaded) {
     return (
       <div className="ForecastWeather">
-        <div className="row">
-          <div className="card">
-            <div className="card-body">
+        <div className="card">
+          <div className="card-body">
+            <div className="row">
               {forecast.map(function(dailyForecast, index) {
-                if (index < 5) {
+                if (index < 4) {
                   return (
-                    <div className="col" key={index}>
+                    <div className="col-3" key={index}>
                       <ForecastDay data={dailyForecast} />
                     </div>
                   );
